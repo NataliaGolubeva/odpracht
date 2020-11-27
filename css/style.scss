@@ -21,56 +21,102 @@ body {
     margin-bottom: 10px;
     border-radius: 9px;
     box-shadow: 1px 1px 2px #acaaaa, 0 0 25px #92d3c6, 0 0 5px #57c7b1;
+    position: relative;
 
     &__input {
       padding: 10px;
       border: 1px solid $green;
       border-radius: 9px;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
       background-color: #92d3c6;
       font-size: 16px;
-      width: 460px;
+      width: 500px;
       height: 68px;
       outline: none;
+      padding-right: 85px;
+      //&--errorState {
+      //  background-color: red;
+      //  visibility: hidden;
+      //}
 
+      &::placeholder {
+        color: white;
+      }
       &:focus {
+        background-color: #bae7de;
+        &::placeholder {
+          color: black;
+        }
+      }
+    }
+    .button {
+      &__toAdd {
+        position: absolute;
+        top: 21px;
+        right: 17px;
+        border: 1px solid #92d3c6;
+        border-radius: 50%;
+        height: 67px;
+        width: 67px;
         background-color: white;
-        border: white;
-        color: black;
+        &:focus {
+          outline: 0;
+          background-color: rgb(233, 241, 239);
+        }
+        &:hover {
+          transform: scale(1.1);
+        }
+        .icon-plus {
+          font-size: 35px;
+          color: $green;
+          top: 15px;
+        }
       }
     }
   }
   &__list {
+    position: relative;
     &__item {
       display: flex;
+      align-items: center;
       margin-left: 20px;
       width: 500px;
       margin-bottom: 10px;
-      padding: 16px;
+      padding: 10px;
       border-radius: 9px;
       background-color: $white;
-      box-shadow: 1px 1px 2px #acaaaa, 0 0 15px #b7b8b7;
+      box-shadow: 0 0 3px #b7b8b7;
       &__text {
         margin-right: auto;
-        padding-top: 10px;
       }
       .button {
         display: inline-block;
         padding: 10px;
+
         &--check {
           color: $green;
-
+          font-size: 30px;
+          position: relative;
           &:hover {
-            color: white;
-            background-color: $green;
+          }
+          &:before {
+            position: absolute;
+            content: "";
+            border-left: 2px solid $grey;
+            height: 35px;
+            left: -5px;
+            pointer-events: none;
           }
         }
         &--delete {
-          margin-right: 43px;
+          margin-right: 10px;
           .icon-trash-empty {
             color: $grey;
-
+            font-size: 20px;
             &:hover {
               color: red;
+              transform: scale(1.1);
             }
           }
         }

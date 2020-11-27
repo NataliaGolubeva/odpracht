@@ -168,6 +168,7 @@ body {
   width: 500px;
   height: 68px;
   outline: none;
+  padding-right: 85px;
 }
 .todoApp__form__input::placeholder {
   color: white;
@@ -180,17 +181,28 @@ body {
 }
 .todoApp__form .button__toAdd {
   position: absolute;
-  top: 22px;
+  top: 21px;
   right: 17px;
-  border: 1px solid white;
+  border: 1px solid #92d3c6;
   border-radius: 50%;
-  height: 65px;
-  width: 65px;
+  height: 67px;
+  width: 67px;
   background-color: white;
 }
+.todoApp__form .button__toAdd:focus {
+  outline: 0;
+  background-color: #e9f1ef;
+}
+.todoApp__form .button__toAdd:hover {
+  transform: scale(1.1);
+}
 .todoApp__form .button__toAdd .icon-plus {
-  font-size: 40px;
+  font-size: 35px;
   color: #19ba99;
+  top: 15px;
+}
+.todoApp__list {
+  position: relative;
 }
 .todoApp__list__item {
   display: flex;
@@ -201,11 +213,10 @@ body {
   padding: 10px;
   border-radius: 9px;
   background-color: #fff;
-  box-shadow: 1px 1px 2px #acaaaa, 0 0 15px #b7b8b7;
+  box-shadow: 0 0 3px #b7b8b7;
 }
 .todoApp__list__item__text {
   margin-right: auto;
-  padding-top: 20px;
 }
 .todoApp__list__item .button {
   display: inline-block;
@@ -214,16 +225,26 @@ body {
 .todoApp__list__item .button--check {
   color: #19ba99;
   font-size: 30px;
+  position: relative;
+}
+.todoApp__list__item .button--check:before {
+  position: absolute;
+  content: "";
+  border-left: 2px solid #cbd5d2;
+  height: 35px;
+  left: -5px;
+  pointer-events: none;
 }
 .todoApp__list__item .button--delete {
-  margin-right: 43px;
+  margin-right: 10px;
 }
 .todoApp__list__item .button--delete .icon-trash-empty {
   color: #cbd5d2;
-  font-size: 30px;
+  font-size: 20px;
 }
 .todoApp__list__item .button--delete .icon-trash-empty:hover {
   color: red;
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=style.css.map */
